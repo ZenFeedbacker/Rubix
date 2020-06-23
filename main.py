@@ -1,14 +1,8 @@
-from window import Window
-from tkinter import *
+from flask import Flask, render_template
+
+app = Flask(__name__)
 
 
-def main():
-    root = Tk()
-    w = Window()
-    root.geometry("800x600+150+150")
-
-    root.mainloop()
-
-
-if __name__ == '__main__':
-    main()
+@app.route('/')
+def index():
+    return render_template('index.html')
